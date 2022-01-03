@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* baggrund. tog bare et random billede kan altid ændres */
+body {
+    background: url('IMG/dna-3539309_1920.jpg') no-repeat center;
+    background-size: cover;
+    font-family: "Times New Roman", serif;
+}
+
+/* Centrer boksen, som den er i midten */
+.loginBoks {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Den sorte boks i midten */
+.form {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    height: 60%;
+    padding: 80px 40px 40px;
+    background: rgba(0,0,0,0.8); /* baggrunds farven*/
+    border-radius: 10px;
+    color: white;
+}
+
+/* overskrift bliver centreret */
+.form h1 {
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    color: white;
+}
+.form .input-gruppe {
+    position: relative;
+}
+
+/* laver det til en linje frem for en boks */
+.form .input-gruppe input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+/* fikser spacing */
+.form .input-gruppe label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: .3s ease-out;
+}
+
+/* gør at teksten flytter sig op når man skal til at skrive */
+.form .input-gruppe input:focus + label,
+.form .input-gruppe input:valid + label {
+    transform: translateY(-18px);
+    color: white;
+    font-size: .8rem;
+}
+
+/* rest og login knappen */
+.knap {
+    font-family: "Times New Roman", serif;
+    display:inline-block;
+    outline: none;
+    border: 1px solid rgb(11,71,144);
+    background-color: rgb(11,71,144);
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.knap:hover {background-color: dodgerblue;}
+
+.knap:active {
+    background-color: dodgerblue;;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* øje icon */
+i{
+    color: gray;
+    position: absolute;
+    cursor: pointer;
+}
+

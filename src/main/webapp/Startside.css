@@ -1,0 +1,417 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: 'Times New Roman', sans-serif;
+    background: url("IMG/white-abstract.jpg");
+    background-size: cover;
+}
+
+
+/*DETTE ER TOPBAR*/
+.topbar p {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
+/*DETTE ER FOR HOTBAR*/
+
+.hotbar {
+    position: absolute;
+    top: 5px;
+    right: 5%;
+    height: auto;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    font-family: 'Times New Roman', sans-serif;
+}
+
+.hotbar a {
+    background-color: rgb(11, 71, 144) /*rgb(162,221,240)*/;
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    font-family: 'Times New Roman', sans-serif;
+}
+
+/*DETTE ER FOR BRUGERNAVN*/
+.bruger {
+    color: black;
+    font-size: 30px;
+    position: relative;
+    top: 50px;
+    left: 20px;
+}
+
+/*DETTE ER FOR MELLEMSTED*/
+.mellemsted {
+    position: relative;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-gap: 10px;
+    padding: 2px;
+    width: 200px;
+    height: 30px;
+    left: 58%;
+    right: 30%;
+    font-family: "Times New Roman", sans-serif;
+}
+
+.mellemsted div {
+    font-weight: bold;
+    background-color: rgb(11, 71, 144) /*rgb(162,221,240)*/;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.mellemsted div a {
+    display: inline-block;
+    color: white;
+}
+
+/*AUTO TIDER*/
+.autotidersted {
+    position: absolute;
+    display: block;
+    width: 30rem;
+    height: 40rem;
+    left: 58%;
+    right: 10%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+.autotiderbar {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 2em;
+    color: white;
+    background: rgb(11, 71, 144);
+}
+
+.autotider {
+    font-size: 25px;
+    background-color: gray;
+}
+
+.autoname {
+    font-size: 20px;
+}
+
+.autonote {
+    font-size: 15px;
+}
+
+/*DETTE ER FOR SKEMA*/
+.schema {
+    position: absolute;
+    left: 10%;
+    width: 45%;
+    height: 40rem;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+.actualdate {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: rgb(11, 71, 144);
+}
+
+.actualdate div {
+    padding: 2rem;
+}
+
+.actualdate h1 {
+    padding: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.next:hover {
+    background-color: dodgerblue;
+    cursor: pointer;
+}
+
+.prev:hover {
+    background-color: dodgerblue;
+    cursor: pointer;
+}
+
+.days {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.4rem;
+}
+
+.days div {
+    letter-spacing: 0.1rem;
+    width: calc(40rem / 7);
+    justify-content: center;
+    align-items: center;
+}
+
+.dates {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+}
+
+.dates div {
+    font-size: 1.4rem;
+    margin: 0.2rem;
+    width: calc(37rem / 7);
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.today {
+    background-color: rgb(11, 71, 144);
+    color: white;
+    font-weight: bolder;
+}
+
+.dates div:hover:not(.today) {
+    background-color: dodgerblue;
+    cursor: pointer;
+}
+
+.active {
+    background-color: dodgerblue;
+}
+
+.today:hover {
+    cursor: pointer;
+}
+
+.lastdates {
+    opacity: 50%;
+}
+
+.nextdates {
+    opacity: 50%;
+}
+
+/* DETTE ER FOR SIDESKEMA*/
+.tider {
+    position: relative;
+    display: grid;
+    grid-template-columns: 10% repeat(1, 1fr);
+    grid-template-rows:auto;
+    grid-gap: 2px;
+    overflow: auto;
+    top: 100rem;
+    width: 50rem;
+    max-height: 600px;
+    padding: 1em;
+}
+
+.tider div {
+    font-weight: bold;
+    color: white;
+    padding: 1em;
+    background-color: rgb(11, 71, 144);
+    border-radius: 3px;
+}
+
+.tider div:nth-child(2n) {
+    background-color: rgb(115, 121, 125);
+    opacity: 100;
+}
+
+/* Pop-up journal */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 1px;
+    right: 20px;
+    border: 3px solid black;
+}
+
+.form-container {
+    max-width: 500px;
+    padding: 10px;
+    background-color: white;
+}
+
+.button1 {
+    border: 1px solid rgb(11, 71, 144);
+    background-color: rgb(11, 71, 144);
+    color: white;
+    height: 30px;
+    font-family: "Times New Roman", sans-serif;
+}
+
+.button1:hover {
+    background-color: dodgerblue;
+}
+
+.button1:active {
+    background-color: dodgerblue;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+h1 {
+    margin: 1px;
+    width: 400px;
+    padding: 10%;
+    height: 10px;
+}
+
+.container {
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#tidmellem {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+span {
+    display: block;
+}
+
+input {
+    background-color: #eee;
+    padding: 12px;
+    margin: 8px 0;
+    width: 280px;
+    border: 1px solid;
+}
+
+select {
+    background-color: #eee;
+    padding: 12px;
+    margin: 8px 0;
+    width: 102%;
+    border: 1px solid;
+}
+
+textarea {
+    background-color: #eee;
+    padding: 12px;
+    margin: 8px 0;
+    width: 280px;
+    border: 1px solid;
+}
+
+.button {
+    border: 1px solid rgb(11, 71, 144);
+    background-color: rgb(11, 71, 144);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    height: 30px;
+    width: 49%
+}
+
+.button:hover {
+    background-color: dodgerblue;
+}
+
+.button:active {
+    background-color: dodgerblue;;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* Fra website */
+
+.open-button {
+    background-color: rgb(11,71,144) ;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    z-index: 9;
+    background-color: white;
+    border: 1px solid black;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+
+
+
+

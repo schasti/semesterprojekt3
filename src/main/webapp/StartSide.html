@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Start side</title>
+    <link rel="stylesheet" type="text/css" href="Startside.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+
+
+<!--DETTE ER TOPBAR -->
+<div class="topbar">
+    <p id="MyClockDisplay" class="clock"></p>
+    <!--Inspiration fra: https://www.youtube.com/watch?v=qvypCd2Vl4s&ab_channel=VerkkoNet -->
+</div>
+
+<!--DETTE ER FOR HOTBAR-->
+
+<div class="hotbar">
+    <button class="button1" onclick="window.location.replace('Importside.html')"> Import</button>
+    <button class="button1" onclick="logud()">Log ud</button>
+</div>
+
+<!--DETTE ER FOR BRUGERNAVN-->
+<div class="bruger">
+    <p id="brugernavn"><b>BRUGERNAVN</b></p>
+</div>
+<!--DETTE ER FOR MELLEMSTED-->
+
+<div class="mellemsted">
+    <button onclick="refresh()" class="button1"> <span class="material-icons-outlined">
+refresh
+</span></button>
+    <!--Pop-up journal-->
+    <button onclick="openForm()" class="button1">Tilføj ny aftale</button>
+</div>
+
+
+<!--DETTE ER FOR AUTOGENNERET TIDER -->
+<div class="autotidersted" id="autosted">
+    <div class="autotiderbar" id="autotiderbar">Tider på dagen:</div>
+    <div class="autotider" id="autotider"></div>
+</div>
+
+<!-- journal -->
+<div class="form-popup" id="myForm">
+    <div class="form-container" >
+        <h1>Aftale</h1>
+        <span>
+            <label for="cpr">CPR</label></span>
+        <span>
+            <input type="text" id="cpr" name="cpr" placeholder="CPR" required class="box"></span>
+        <!--<span>
+            <label for="navn">Fornavn og efternavn</label></span>
+
+        <span>
+            <input type="text" id="navn" name="name" placeholder="Fornavn og efternavn" required class="box"></span>-->
+        <label for="datetime">V&#230lg tid</label>
+
+        <input type="datetime-local" id="datetime" onfocusout="noWeekend()" required>
+        <label for="timefree">t&#230tteste tid</label>
+        <input type="text" id="timefree" disabled>
+
+        <input type="text" id="timeStart" name="timestart" hidden>
+        <input type="text" id="timeEnd" name="timeend" hidden>
+
+        <span>
+            <label for="textarea">Notat </label></span>
+        <textarea id="textarea" name="note" rows="4" cols="50"></textarea><br>
+
+        <input type="button" value="Cancel" class="button" onclick="closeForm()">
+        <input type="button" value="Indsend" class="button" onclick="submitForm()">
+    </div>
+</div>
+
+<!--DETTE ER FOR SKEMA-->
+
+<div class="schema">
+    <div class="actualdate">
+        <div class="prev" onclick="prevdate()">Forrige</div>
+        <h1 id="actualmonth"></h1>
+        <div class="next" onclick="nextdate()">N&#230ste</div>
+    </div>
+    <div>
+        <div class="days">
+            <div>Mandag</div>
+            <div>Tirsdag</div>
+            <div>Onsdag</div>
+            <div>Torsdag</div>
+            <div>Fredag</div>
+            <div>Lørdag</div>
+            <div>Søndag</div>
+        </div>
+
+        <div class="lastdates"></div>
+        <div class="dates"></div>
+        <div class="nextdates"></div>
+    </div>
+</div>
+
+</body>
+<script src="StartSide.js"></script>
+</html>
+
