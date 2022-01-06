@@ -268,7 +268,7 @@ body {
     border: 1px solid rgb(11, 71, 144);
     background-color: rgb(11, 71, 144);
     color: white;
-    height: 30px;
+    height: 28px;
     font-family: "Times New Roman", sans-serif;
 }
 
@@ -277,6 +277,28 @@ body {
 }
 
 .button1:active {
+    background-color: dodgerblue;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.button2 {
+    border: 1px solid rgb(11, 71, 144);
+    background-color: rgb(11, 71, 144);
+    color: white;
+    height: 28px;
+    font-family: "Times New Roman", sans-serif;
+    position: fixed;
+    top: 5px;
+    right: 2px;
+    width: 65px;
+}
+
+.button2:hover {
+    background-color: dodgerblue;
+}
+
+.button2:active {
     background-color: dodgerblue;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
@@ -411,6 +433,8 @@ textarea {
 .form-container .btn:hover, .open-button:hover {
     opacity: 1;
 }
+
+
 
 
 

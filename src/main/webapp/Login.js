@@ -59,6 +59,9 @@ async function login() {
     window.location.href = "StartSide.html"
 }
 
+
+/*----------------------------------------------------------------*/
+
 /*
 function login() {
     user = document.getElementById("username").value;

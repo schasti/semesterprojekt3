@@ -279,3 +279,7 @@ function logud() {
     window.location.replace("LoginSide.html");
 }
 
+function SeEKg() {
+    window.location.replace("ekgSide.html");
+}
+
