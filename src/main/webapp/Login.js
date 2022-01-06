@@ -12,8 +12,6 @@ passlabel.addEventListener('keyup', (e) =>
     }
 })
 
-
-
 function togglevisibiliy() {
     const passwordInput = document.getElementById("password")
     const icon = document.getElementById("icon")
@@ -25,8 +23,11 @@ function togglevisibiliy() {
         icon.innerText = "visibility"
     }
 }
+function login(){
+    window.location.href = "StartSide.html";
+}
 
-/* kode til at validere koden */
+/* kode til at validere koden
 let user = "";
 let pass = "";
 
@@ -58,7 +59,7 @@ async function login() {
     //Viderestil til den rigtige side!
     window.location.href = "StartSide.html"
 }
-
+*/
 
 /*----------------------------------------------------------------*/
 

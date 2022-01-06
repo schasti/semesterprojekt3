@@ -1,8 +1,6 @@
-
 * {
     box-sizing: border-box;
 }
-
 body {
 
     font-family: 'Times New Roman', sans-serif;
@@ -10,16 +8,7 @@ body {
     background-size: cover;
 }
 
-
-/*DETTE ER TOPBAR*/
-.topbar p {
-    font-size: 25px;
-    font-weight: bold;
-    color: black;
-}
-
 /*DETTE ER FOR HOTBAR*/
-
 .hotbar {
     position: absolute;
     top: 5px;
@@ -44,7 +33,7 @@ body {
     font-family: 'Times New Roman', sans-serif;
 }
 
-/*knapperne */
+/*knapperne i hotbar */
 .button1 {
     border: 2px solid rgb(11, 71, 144);
     background-color: rgb(11, 71, 144);
@@ -85,91 +74,32 @@ body {
     transform: translateY(4px);
 }
 
-h1 {
+/* Box til ekg */
+.container1{
+    position: absolute;
+    top: 100px;
+    left: 5%;
+    width: 55%;
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+/* Box til CPR og advarseler */
+.container2{
+    position: absolute;
+    top: 100px;
+    right: 5%;
+    width: 30%;
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+h2 {
     margin: 1px;
-    width: 400px;
+    width: 500px;
     padding: 10%;
     height: 10px;
 }
-
-.container {
-    margin: auto;
-    width: 90%;
-    padding: 10px;
-}
-
-label {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#tidmellem {
-    font-size: 15px;
-    font-weight: normal;
-}
-
-span {
-    display: block;
-}
-
-input {
-    background-color: #eee;
-    padding: 12px;
-    margin: 8px 0;
-    width: 280px;
-    border: 1px solid;
-}
-
-select {
-    background-color: #eee;
-    padding: 12px;
-    margin: 8px 0;
-    width: 102%;
-    border: 1px solid;
-}
-
-textarea {
-    background-color: #eee;
-    padding: 12px;
-    margin: 8px 0;
-    width: 280px;
-    border: 1px solid;
-}
-
-.button {
-    border: 1px solid rgb(11, 71, 144);
-    background-color: rgb(11, 71, 144);
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    height: 30px;
-    width: 49%
-}
-
-.button:hover {
-    background-color: dodgerblue;
-}
-
-.button:active {
-    background-color: dodgerblue;;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-}
-
-/* Fra website */
-
-.open-button {
-    background-color: rgb(11,71,144) ;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    opacity: 0.8;
-    position: fixed;
-    bottom: 23px;
-    right: 28px;
-    width: 280px;
-}
-

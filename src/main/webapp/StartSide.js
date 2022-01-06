@@ -244,7 +244,7 @@ function noWeekend() {
     }
 }
 
-window.onload = function () {
+/*window.onload = function () {
     showTime()
 }
 
@@ -267,6 +267,7 @@ function showTime() {
 
     setTimeout(showTime, 10000,); //Tiden kan ændres, hvis vi er begrænset på processernes kapicitet
 }
+*/
 
 function refresh() {
     hentAftaleFecth(fromfrom, tiltil)
