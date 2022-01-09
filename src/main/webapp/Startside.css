@@ -91,7 +91,7 @@ body {
     margin: 0;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    background-color: rgb(192, 192, 192);
 }
 
 .autotiderbar {
@@ -109,7 +109,7 @@ body {
 
 .autotider {
     font-size: 25px;
-    background-color: gray;
+    background-color: rgb(192, 192, 192);
 }
 
 .autoname {
@@ -128,7 +128,7 @@ body {
     height: 40rem;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    background-color: rgb(192, 192, 192);
 }
 
 .actualdate {
@@ -245,7 +245,7 @@ body {
 }
 
 .tider div:nth-child(2n) {
-    background-color: rgb(115, 121, 125);
+    background-color: rgb(192, 192, 192);
     opacity: 100;
 }
 

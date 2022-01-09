@@ -83,7 +83,7 @@ body {
     height: 70%;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    background-color: rgb(192, 192, 192);
 }
 
 /* Box til CPR og advarseler */
@@ -95,7 +95,7 @@ body {
     height: 70%;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    background-color: rgb(192, 192, 192);
 }
 h2 {
     margin: 1px;

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>EKG side</title>
     <link rel="stylesheet" type="text/css" href="ekg.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -13,10 +14,51 @@
     <button class="button1" onclick="window.location.replace('StartSide.html')"> Startside</button>
     <button class="button2" onclick="logud()">Log ud</button>
 </div>
-<!--EKG box-->
+
+<!--EKG box -->
 <div class="container1">
-    <h2> Se dit EKG her</h2>
+    <canvas id="EKGplot"></canvas>
 </div>
+
+<!--EKG graf -->
+<script>
+    const labels = [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10',
+        '11',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Dit EKG',
+            backgroundColor: 'rgb(255, 0, 0)',
+            borderColor: 'rgb(255, 0, 0)',
+            data: [20, 20, 15, 45, 15, 20, 20,15,45,15,20], <!--her skal dataen komme ind, lige nu er det manuelt -->
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+</script>
+
+<script>
+    const EKGplot = new Chart(
+        document.getElementById('EKGplot'),
+        config
+    );
+</script>
 
 <!--advarselses box-->
 <div class="container2">
