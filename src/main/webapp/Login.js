@@ -24,7 +24,7 @@ function togglevisibiliy() {
     }
 }
 
-/* kode til at validere koden*/
+/* kode til at validere koden */
 let user = "";
 let pass = "";
 
