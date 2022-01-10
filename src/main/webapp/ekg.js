@@ -8,4 +8,3 @@ function logud() {
     sessionStorage.setItem("username", "");
     window.location.replace("LoginSide.html");
 }
-
