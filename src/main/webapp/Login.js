@@ -59,7 +59,7 @@ async function login() {
 
 /*----------------------------------------------------------------*/
 
-/*
+
 function login() {
     user = document.getElementById("username").value;
     pass = document.getElementById("password").value;
@@ -75,4 +75,4 @@ function login() {
         }
     }).then(data => validate(data)).catch(Error =>alert(Error));
 
-}*/
+}

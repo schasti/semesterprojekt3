@@ -17,9 +17,9 @@ public class SQL {
         return SQLOBJ;
     }
 
-    private final String url = "jdbc:mysql://130.225.170.176:3306/listedb2";
-    private final String DatabaseUser = "test2";
-    private final String DatabasePassword = System.getenv("dbpass"); //tomcat system startups
+    private final String url = "jdbc:mysql://130.225.170.242:3306/sp3";
+    private final String DatabaseUser = "naveed";
+    private final String DatabasePassword = System.getenv("1234"); //tomcat system startups
 
     private Connection myConn;
     public Statement myStatement;
@@ -48,7 +48,7 @@ public class SQL {
         SQL.getSqlOBJ().makeConnectionSQL();
         AftaleListe aftaleListe = new AftaleListe();
         try {
-            PreparedStatement pp = myConn.prepareStatement("SELECT * FROM listedb2.aftaler WHERE TimeStart BETWEEN ? and ?;");
+            PreparedStatement pp = myConn.prepareStatement("SELECT * FROM sp3.aftaler WHERE TimeStart BETWEEN ? and ?;");
             pp.setString(1, fra);
             pp.setString(2, til);
 
@@ -78,7 +78,7 @@ public class SQL {
 
         try {
             makeConnectionSQL();
-            PreparedStatement pp = myConn.prepareStatement("INSERT INTO listedb2.aftaler (CPR, TimeStart, TimeEnd, Notat, KlinikId) values(?,?,?,?,?);");
+            PreparedStatement pp = myConn.prepareStatement("INSERT INTO sp3.aftaler (CPR, TimeStart, TimeEnd, Notat, KlinikId) values(?,?,?,?,?);");
 
             pp.setString(1, aftale.getCPR());  //CPR
             pp.setString(2, aftale.getTimeStart());  //starttime
@@ -125,7 +125,7 @@ public class SQL {
 
     public String hentBrugerListe(String bruger) throws SQLException {
         SQL.getSqlOBJ().makeConnectionSQL();
-        PreparedStatement preparedStatement = myConn.prepareStatement("SELECT * FROM listedb2.LoginOplysninger WHERE USERNAME = ?;");
+        PreparedStatement preparedStatement = myConn.prepareStatement("SELECT * FROM sp3.Login WHERE USERNAME = ?;");
         preparedStatement.setString(1, bruger);
         String svar = "";
         try {
@@ -144,7 +144,7 @@ public class SQL {
 
     public AftaleListe cprSearch(String cpr) throws SQLException {
         SQL.getSqlOBJ().makeConnectionSQL();
-        PreparedStatement pp = myConn.prepareStatement("SELECT * FROM listedb2.aftaler WHERE CPR = ?;");
+        PreparedStatement pp = myConn.prepareStatement("SELECT * FROM sp3.aftaler WHERE CPR = ?;");
         AftaleListe aftaleListe = new AftaleListe();
         try {
             pp.setString(1, cpr);
