@@ -7,6 +7,11 @@ function logud() {
     window.location.replace("LoginSide.html");
 }
 
+function showString(data2){
+    let s = ""+data2
+    console.log(s)
+}
+
 /* EKG plot */
 let data ={
     datasets:

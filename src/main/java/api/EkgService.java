@@ -1,9 +1,10 @@
 package api;
 
+import controller.EkgController;
+import dataAccesLayer.apiDAO;
 import org.json.JSONObject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import controller.EkgController;
 
 @Path("ekgSessions")
 @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON,MediaType.TEXT_PLAIN})
@@ -11,17 +12,19 @@ import controller.EkgController;
 
 public class EkgService {
 
-    @Path("ekgData")
     @POST
-    @Consumes({MediaType.TEXT_PLAIN})
+    @Produces({MediaType.APPLICATION_JSON})
     public String ekgpython(String data){
-        return EkgController.getEkgControllerObj().send(data);
+        System.out.println("step1 "+data);
+        EkgController.getEkgControllerObj().setS(data);
+        return EkgController.getEkgControllerObj().getS();
+    }
+    @GET
+    @Consumes({MediaType.APPLICATION_JSON})
+    public String ekg(){
+        System.out.println("step2 "+ EkgController.getEkgControllerObj().getS());
+        return EkgController.getEkgControllerObj().getS();
     }
 
-    @Path("ekgData")
-    @GET
-    public String ekgGet(String data){
-        return EkgController.getEkgControllerObj().modtag(data);
-    }
 
 }

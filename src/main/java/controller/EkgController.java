@@ -20,10 +20,13 @@ public class EkgController {
         return EkgControllerObj;
     }
 
-    public String send(String s){
-     return s;
+    String s;
+    public void setS(String data){
+        s=data;
     }
-    public String modtag(String s){
+    public String getS(){
         return s;
     }
+
+
 }
