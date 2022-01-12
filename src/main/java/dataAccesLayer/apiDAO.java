@@ -21,7 +21,7 @@ public class apiDAO {
         return s;
     }
 
-    public String getString(String http) {
+   public String getString(String http) {
         String s = null;
         try {
             s = Unirest.get(http).basicAuth("Authorization","hemmeliglogin").asString().getBody();
