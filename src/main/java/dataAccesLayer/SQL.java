@@ -19,14 +19,14 @@ public class SQL {
 
     private final String url = "jdbc:mysql://130.225.170.242:3306/sp3";
     private final String DatabaseUser = "naveed";
-    private final String DatabasePassword = System.getenv("1234"); //tomcat system startups
+    private final String DatabasePassword = "1234";//System.getenv("fanta2020"); //tomcat system startups
 
     private Connection myConn;
     public Statement myStatement;
 
     public void makeConnectionSQL() throws SQLException {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -125,7 +125,7 @@ public class SQL {
 
     public String hentBrugerListe(String bruger) throws SQLException {
         SQL.getSqlOBJ().makeConnectionSQL();
-        PreparedStatement preparedStatement = myConn.prepareStatement("SELECT * FROM sp3.Login WHERE USERNAME = ?;");
+        PreparedStatement preparedStatement = myConn.prepareStatement("SELECT * FROM sp3.Login WHERE user = ?;");
         preparedStatement.setString(1, bruger);
         String svar = "";
         try {

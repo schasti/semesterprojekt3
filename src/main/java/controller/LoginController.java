@@ -27,6 +27,7 @@ public class LoginController {
         try {
             // sql kald der kontrollere om brugeren eksitere
             String brugerListe = SQL.getSqlOBJ().hentBrugerListe(loginData.getUsername());
+            System.out.println(loginData.getUsername());
 
             // kontrol af login og generer token
             if (loginVal(brugerListe, loginData.getPassword())) {

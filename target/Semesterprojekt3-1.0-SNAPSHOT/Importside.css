@@ -1,0 +1,81 @@
+/* baggrund */
+body {
+    font-family: "Times New Roman", serif;
+}
+/*tekstfelt*/
+.tekstfelt{
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 50%;
+    left:30%;
+    padding: 80px 40px 40px;
+    background: grey;
+    border-radius: 10px;
+    color: black;
+}
+
+
+/* Dropdown Button */
+.dropdownbtn {
+    background-color: rgb(11,71,144);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.button1 {
+    border: 1px solid rgb(11, 71, 144);
+    background-color: rgb(11, 71, 144);
+    color: white;
+    height: 30px;
+    text-decoration: underline;
+}
+
+.button1:hover {
+    background-color: dodgerblue;
+}
+
+.button1:active {
+    background-color: dodgerblue;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: dodgerblue;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content label {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content label:hover {background-color: #ddd}
+
+/* Show the dropdown menu */
+.show {display:block;}
