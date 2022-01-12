@@ -11,11 +11,17 @@ import controller.EkgController;
 
 public class EkgService {
 
-    @Path("postEkg")
+    @Path("ekgData")
     @POST
     @Consumes({MediaType.TEXT_PLAIN})
     public String ekgpython(String data){
-        return EkgController.getEkgControllerObj().getString(data);
+        return EkgController.getEkgControllerObj().send(data);
+    }
+
+    @Path("ekgData")
+    @GET
+    public String ekgGet(String data){
+        return EkgController.getEkgControllerObj().modtag(data);
     }
 
 }

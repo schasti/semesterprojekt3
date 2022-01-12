@@ -20,7 +20,10 @@ public class EkgController {
         return EkgControllerObj;
     }
 
-    public String getString(String s){
+    public String send(String s){
      return s;
+    }
+    public String modtag(String s){
+        return s;
     }
 }
