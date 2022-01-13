@@ -34,8 +34,8 @@ public class EkgService {
 
     @GET
     @Consumes({MediaType.APPLICATION_JSON})
-    public String ekg(){
-        return EkgController.getEkgControllerObj().getS();
+    public void ekg(){
+
     }
 
 

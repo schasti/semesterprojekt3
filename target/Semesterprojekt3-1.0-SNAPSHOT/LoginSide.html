@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title> Login side</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Login.css">
+</head>
+
+<body>
+<div class="loginBoks">
+    <div id="loginform" class="form">
+        <h1>Login</h1>
+        <div class="input-gruppe">
+            <input type="text" id="username" required>
+            <label for="username">Brugernavn</label>
+        </div>
+        <div class="input-gruppe">
+            <input type="password" id="password" required>
+            <label for="password" >Kodeord </label>
+            <i id="visibilityListen"> <span id="icon" class="material-icons-outlined">visibility</span> </i>
+        </div>
+        <input type="button" value="Login" class="knap" onclick="login()" id="btn">
+    </div>
+
+</div>
+</body>
+<script src="Login.js"></script>
+</html>
