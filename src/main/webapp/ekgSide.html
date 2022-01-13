@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="ekg.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="ekg.js"></script>
+    <link href="https://unpkg.com/intro.js/minified/introjs.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
 </head>
 <body>
 
@@ -17,15 +19,15 @@
 </div>
 
 <!--EKG box -->
-<div class="container1">
+<div class="container1" data-title="EKG" data-intro="I denne boks kan du se dit EKG">
     <canvas id="ekgplot" height="350" width="500" ></canvas>
 </div>
 
 <!--Advarselses box-->
 <div class="container2">
-    <h2>CPR:</h2>
-    <h2> Meddelelser: </h2>
+    <h2 data-title="CPR" data-intro="Her kan du se dit CPR nummer">CPR:</h2>
+    <h2 data-title="Meddelelser" data-intro="I denne boks kan du se hvis din læge eller vores system har lavet en kommentar til dit EKG"> Meddelelser: </h2>
 </div>
-
+<script src="intro.js"></script>
 </body>
 </html>
