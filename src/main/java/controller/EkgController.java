@@ -1,14 +1,5 @@
 package controller;
 
-import com.google.gson.Gson;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
-import dataAccesLayer.apiDAO;
-import model.Aftale;
-import model.AftaleListe;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 public class EkgController {
 
     private EkgController() {
@@ -18,14 +9,6 @@ public class EkgController {
 
     static public EkgController  getEkgControllerObj() {
         return EkgControllerObj;
-    }
-
-    String s;
-    public void setS(String data){
-        s=data;
-    }
-    public String getS(){
-        return s;
     }
 
 

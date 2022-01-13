@@ -1,7 +1,4 @@
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.SchemaOutputResolver;
+/*
 import model.Aftale;
 import model.AftaleListe;
 import org.apache.xml.serialize.OutputFormat;
@@ -65,4 +62,4 @@ public class AftaleXSDgen {
 
     }
 }
-
+*/

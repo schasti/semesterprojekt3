@@ -1,28 +1,40 @@
 package api;
 
 import controller.EkgController;
-import dataAccesLayer.apiDAO;
-import org.json.JSONObject;
+import model.EkgData;
+
 import javax.ws.rs.*;
+import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
+import java.util.List;
 
 @Path("ekgSessions")
-@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON,MediaType.TEXT_PLAIN})
-@Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON,MediaType.APPLICATION_FORM_URLENCODED})
 
 public class EkgService {
 
+
     @POST
     @Produces({MediaType.APPLICATION_JSON})
-    public String ekgpython(String data){
-        System.out.println("step1 "+data);
-        EkgController.getEkgControllerObj().setS(data);
-        return EkgController.getEkgControllerObj().getS();
+    @Consumes({MediaType.APPLICATION_JSON})
+    public EkgData ekgpython(EkgData data){
+       // EkgData ekgData = new EkgData();
+      // EkgController.getEkgControllerObj().setS(data);
+        return data;
     }
+   /* public EkgData ekgpython(@QueryParam("identifier") String cpr,@QueryParam("session") String session, String data){
+        EkgData ekgdata = new EkgData();
+
+        ekgdata.setCpr(cpr);
+        ekgdata.setSession(Integer.parseInt(session));
+
+        ekgdata.setDatanotlist(data);
+        return ekgdata ;
+    }*/
+
     @GET
     @Consumes({MediaType.APPLICATION_JSON})
     public String ekg(){
-        System.out.println("step2 "+ EkgController.getEkgControllerObj().getS());
         return EkgController.getEkgControllerObj().getS();
     }
 
