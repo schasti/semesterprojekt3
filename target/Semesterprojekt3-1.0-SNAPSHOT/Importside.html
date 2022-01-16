@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Importside</title>
+    <link rel="stylesheet" type="text/css" href="Importside.css">
+</head>
+<body>
+<input type="text" id="cpr">
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropdownbtn">Dropdown</button>
+    <div id="myDropdown" class="dropdown-content">
+        <label value="gruppe1" >Test 1</label>
+        <label value="gruppe2">Test 2</label>
+        <label value="gruppe3">Test 3</label>
+        <label value="gruppe4" onclick="fetchfunction('4');">Gruppe 4</label>
+        <label value="gruppe">Test 5</label>
+    </div>
+</div>
+<button class="button1" onclick="window.location.replace('StartSide.html');">Go back</button>
+</body>
+
+<div class="tekstfelt" id="tekstfelt"></div>
+
+<script src="Import.js"></script>
+</html>
