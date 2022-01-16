@@ -176,12 +176,51 @@ public class SQL {
             makeConnectionSQL();
 
             PreparedStatement pp = myConn.prepareStatement("INSERT INTO sp3.ekgSessions (cpr, sessionID, timeStart) values(?,?,?);");
-
-
             pp.setString(1, ekgSession.getCpr());  //CPR
             pp.setString(2, ekgSession.getSession());  //starttime
             pp.setString(3, ekgSession.getTimestart());  //endtime
             pp.execute();
+            removeConnectionSQL();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void creatDataSQL(EkgSession ekgSession){
+
+        try {
+            makeConnectionSQL();
+
+            PreparedStatement pp = myConn.prepareStatement(
+
+                    "CREATE TABLE sp3.cpr12323234"+" (measurement INT NOT NULL AUTO_INCREMENT,"+"value VARCHAR(45) NULL,"+" PRIMARY KEY (measurement))"
+            );
+            pp.execute();
+            removeConnectionSQL();
+
+
+        } catch (SQLException throwables) {
+            OurException ex = new OurException();
+            ex.setMessage("Denne person har haft den angivede session");
+            try {
+                throw ex;
+            } catch (OurException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public void insertDataSQL(EkgSession ekgSession, EkgData ekgData) throws OurException {
+
+        try {
+            makeConnectionSQL();
+
+            for(int i=0; i<ekgData.getData().size(); i++) {
+                PreparedStatement pp = myConn.prepareStatement("INSERT INTO sp3.cpr1234567890session1 (value) values(?);");
+                pp.setString(1, String.valueOf(ekgData.getData().get(i)));  //value
+
+                pp.execute();
+            }
             removeConnectionSQL();
 
         } catch (SQLException e) {
