@@ -194,7 +194,7 @@ public class SQL {
 
             PreparedStatement pp = myConn.prepareStatement(
 
-                    "CREATE TABLE sp3.cpr12323234"+" (measurement INT NOT NULL AUTO_INCREMENT,"+"value VARCHAR(45) NULL,"+" PRIMARY KEY (measurement))"
+                    "CREATE TABLE sp3.cpr"+ekgSession.getCpr()+"session"+ekgSession.getSession()+" (measurement INT NOT NULL AUTO_INCREMENT,"+"value VARCHAR(45) NULL,"+" PRIMARY KEY (measurement))"
             );
             pp.execute();
             removeConnectionSQL();
@@ -215,15 +215,16 @@ public class SQL {
         try {
             makeConnectionSQL();
 
-            for(int i=0; i<ekgData.getData().size(); i++) {
-                PreparedStatement pp = myConn.prepareStatement("INSERT INTO sp3.cpr1234567890session1 (value) values(?);");
-                pp.setString(1, String.valueOf(ekgData.getData().get(i)));  //value
-
-                pp.execute();
+                for (int i = 0; i < ekgData.getData().size() - 1; i ++) {
+                    String write_to_measurement = "INSERT INTO sp3.cpr2103006859session4 (value) values(?);";
+                    PreparedStatement PP = myConn.prepareStatement(write_to_measurement);
+                    PP.setString(1, String.valueOf(ekgData.getData().get(i)));
+                    PP.execute();
+                }
+                System.out.println("Done SQL");
+                removeConnectionSQL();
             }
-            removeConnectionSQL();
-
-        } catch (SQLException e) {
+        catch (SQLException e) {
             e.printStackTrace();
         }
     }

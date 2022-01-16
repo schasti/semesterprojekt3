@@ -27,7 +27,7 @@ public class EkgService {
                         httpHeaders.getRequestHeader("Identifier").get(0),
                         httpHeaders.getRequestHeader("session").get(0),
                         httpHeaders.getRequestHeader("Timestart").get(0)
-                )
+                ), data
         );
 
         return data;

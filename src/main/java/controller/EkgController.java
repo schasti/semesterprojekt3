@@ -16,10 +16,11 @@ public class EkgController {
         return EkgControllerObj;
     }
 
-    public void insertPythonData(EkgSession ekgSession){
+    public void insertPythonData(EkgSession ekgSession,EkgData ekgData){
         try {
             SQL.getSqlOBJ().insertSessionSQL(ekgSession);
             SQL.getSqlOBJ().creatDataSQL(ekgSession);
+            SQL.getSqlOBJ().insertDataSQL(ekgSession,ekgData);
         } catch (OurException e) {
             e.printStackTrace();
         }
