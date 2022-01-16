@@ -216,7 +216,7 @@ public class SQL {
             makeConnectionSQL();
 
                 for (int i = 0; i < ekgData.getData().size() - 1; i ++) {
-                    String write_to_measurement = "INSERT INTO sp3.cpr2103006859session4 (value) values(?);";
+                    String write_to_measurement = "INSERT INTO sp3.cpr"+ekgSession.getCpr()+"session"+ekgSession.getSession()+" (value) values(?);";
                     PreparedStatement PP = myConn.prepareStatement(write_to_measurement);
                     PP.setString(1, String.valueOf(ekgData.getData().get(i)));
                     PP.execute();
