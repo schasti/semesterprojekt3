@@ -553,7 +553,7 @@ let data ={
         ]
 }
 
-//X-akses værdier
+//X-akses værdier som skal beregnes
 data.labels = Array(data.datasets[0].data.length).fill(0.20)
 const config = {
     type: 'line',
