@@ -13,14 +13,10 @@ public class EkgData {
 
 
     public List<Float> getData() {return data;}
+
     public void setData(List<Float> data) {this.data = data;}
 
 
-
-    public void findHeaders(HttpHeaders httpHeaders){
-        String cpr = String.valueOf(httpHeaders);
-        System.out.println(cpr);
-    }
 /*
     private String cpr;
     private int sessionID;

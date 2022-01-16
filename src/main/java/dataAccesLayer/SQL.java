@@ -3,6 +3,8 @@ package dataAccesLayer;
 import exceptions.OurException;
 import model.Aftale;
 import model.AftaleListe;
+import model.EkgData;
+import model.EkgSession;
 
 import java.sql.*;
 
@@ -167,5 +169,25 @@ public class SQL {
         SQL.getSqlOBJ().removeConnectionSQL();
         return aftaleListe;
     }
+
+    public void insertSessionSQL(EkgSession ekgSession) throws OurException {
+
+        try {
+            makeConnectionSQL();
+
+            PreparedStatement pp = myConn.prepareStatement("INSERT INTO sp3.ekgSessions (cpr, sessionID, timeStart) values(?,?,?);");
+
+
+            pp.setString(1, ekgSession.getCpr());  //CPR
+            pp.setString(2, ekgSession.getSession());  //starttime
+            pp.setString(3, ekgSession.getTimestart());  //endtime
+            pp.execute();
+            removeConnectionSQL();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
 
