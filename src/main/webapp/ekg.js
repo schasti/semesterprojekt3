@@ -48,8 +48,6 @@ async function hentPatient() {
     console.log(json)
 }
 
-
-
 //EKG plot
 let data ={
     datasets:
