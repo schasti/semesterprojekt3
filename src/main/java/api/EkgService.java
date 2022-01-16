@@ -30,7 +30,6 @@ public class EkgService {
                 )
         );
 
-
         return data;
     }
 

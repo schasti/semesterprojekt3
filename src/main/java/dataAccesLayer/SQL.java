@@ -187,7 +187,7 @@ public class SQL {
         }
     }
 
-    public void insertDataSQL(EkgSession ekgSession){
+    public void creatDataSQL(EkgSession ekgSession){
 
         try {
             makeConnectionSQL();
@@ -208,6 +208,23 @@ public class SQL {
             } catch (OurException e) {
                 e.printStackTrace();
             }
+        }
+    }
+    public void insertDataSQL(EkgSession ekgSession, EkgData ekgData) throws OurException {
+
+        try {
+            makeConnectionSQL();
+
+            for(int i=0; i<ekgData.getData().size(); i++) {
+                PreparedStatement pp = myConn.prepareStatement("INSERT INTO sp3.cpr1234567890session1 (value) values(?);");
+                pp.setString(1, String.valueOf(ekgData.getData().get(i)));  //value
+
+                pp.execute();
+            }
+            removeConnectionSQL();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
