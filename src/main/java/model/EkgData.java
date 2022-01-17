@@ -2,12 +2,18 @@ package model;
 
 import org.apache.http.HttpHeaders;
 
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@XmlRootElement(name="ekgData")
+@XmlSeeAlso(EkgData.class)
+@XmlAccessorType(XmlAccessType.FIELD)
+
+
 public class EkgData {
 
-
+    @XmlElement(name="measurement")
     private List<Double> data = new ArrayList<>();
 
 

@@ -9,16 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b95ac83-e0d2-4b4a-9315-781139f05e98" name="Changes" comment="validate earlier sessions.">
+    <list default="true" id="3b95ac83-e0d2-4b4a-9315-781139f05e98" name="Changes" comment="ekgData endpoint, mangler xml formattering">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/AuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccesLayer/SQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccesLayer/SQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/EkgData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/EkgData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/api/AuthFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/api/AuthFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/dataAccesLayer/SQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/dataAccesLayer/SQL.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/model/EkgData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/model/EkgData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/AuthFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/AuthFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataAccesLayer/SQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataAccesLayer/SQL.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/EkgData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/EkgData.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +168,7 @@
       <option name="presentableId" value="Default" />
       <updated>1642373278889</updated>
       <workItem from="1642373280114" duration="861000" />
-      <workItem from="1642405232052" duration="13676000" />
+      <workItem from="1642405232052" duration="15277000" />
     </task>
     <task id="LOCAL-00001" summary="sql injection done, tid til at hente">
       <created>1642373522447</created>
@@ -238,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642440921240</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ekgData endpoint, mangler xml formattering">
+      <created>1642446342422</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642446342422</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +265,8 @@
     <MESSAGE value="start på get data" />
     <MESSAGE value="get request på data, auth fejl" />
     <MESSAGE value="validate earlier sessions." />
-    <option name="LAST_COMMIT_MESSAGE" value="validate earlier sessions." />
+    <MESSAGE value="ekgData endpoint, mangler xml formattering" />
+    <option name="LAST_COMMIT_MESSAGE" value="ekgData endpoint, mangler xml formattering" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
