@@ -172,10 +172,12 @@ public class SQL {
         try {
             makeConnectionSQL();
 
-            PreparedStatement pp = myConn.prepareStatement("INSERT INTO sp3.ekgSessions (cpr, sessionID, timeStart) values(?,?,?);");
+            PreparedStatement pp = myConn.prepareStatement("INSERT INTO sp3.ekgSessions (cpr, sessionID, timeStart, markers, comment) values(?,?,?,?,?);");
             pp.setString(1, ekgSession.getCpr());  //CPR
-            pp.setString(2, ekgSession.getSession());  //starttime
-            pp.setString(3, ekgSession.getTimestart());  //endtime
+            pp.setString(2, ekgSession.getSession());
+            pp.setString(3, ekgSession.getTimestart());
+            pp.setString(4, "optional");
+            pp.setString(5, "optional");
             pp.execute();
             removeConnectionSQL();
 
@@ -239,6 +241,8 @@ public class SQL {
                 ekgSession.setCpr(rs.getString(1));
                 ekgSession.setSession(rs.getString(2));
                 ekgSession.setTimestart(rs.getString(3));
+                ekgSession.setMarkers(rs.getString(4));
+                ekgSession.setComment(rs.getString(5));
                 System.out.println(ekgSession);
                 ekgSessionList.addEkgSession(ekgSession);
             }
@@ -263,6 +267,8 @@ public class SQL {
                 ekgSession.setCpr(rs.getString(1));
                 ekgSession.setSession(rs.getString(2));
                 ekgSession.setTimestart(rs.getString(3));
+                ekgSession.setMarkers(rs.getString(4));
+                ekgSession.setComment(rs.getString(5));
 
                 ekgSessionList.addEkgSession(ekgSession);
             }

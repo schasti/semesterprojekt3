@@ -3,6 +3,7 @@ package api;
 import controller.EkgController;
 import exceptions.OurException;
 import model.EkgData;
+import model.EkgSession;
 import model.EkgSessionList;
 
 import javax.ws.rs.*;
@@ -50,7 +51,6 @@ public class EkgService {
 
     @GET
         public EkgSessionList getSession(@QueryParam("cpr") String cpr) throws SQLException, OurException {
-
             return EkgController.getEkgControllerObj().cprSearchEkg(cpr);
         }
 

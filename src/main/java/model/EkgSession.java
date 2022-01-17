@@ -1,34 +1,54 @@
 package model;
 
+import java.util.List;
+
 public class EkgSession {
+
+
+
+    private String cpr;
+    private String sessionID;
+    private String timeStart;
+    private String markers;
+    private String comment;
+
+    @Override
+    public String toString() {
+        return "ekgSession{" +
+                "sessionID=" + sessionID +
+                ", cpr='" + cpr + '\'' +
+                ", timeStart='" + timeStart + '\'' +
+                ", markers=" + markers +
+                ", comment='" + comment + '\'' +
+                '}';
+    }
+
+    public String getMarkers() {return markers;}
+    public void setMarkers(String markers) {this.markers = markers;}
+
+    public String getComment() {return comment;}
+    public void setComment(String comment) {this.comment = comment;}
+
+    public String getSession() {
+        return sessionID;
+    }
+    public void setSession(String session) {
+        this.sessionID = session;
+    }
 
     public String getCpr() {
         return cpr;
     }
-
     public void setCpr(String cpr) {
         this.cpr = cpr;
     }
 
-    String cpr;
-
-    public String getSession() {
-        return session;
-    }
-
-    public void setSession(String session) {
-        this.session = session;
-    }
-
-    String session;
-
     public String getTimestart() {
-        return timestart;
+        return timeStart;
     }
-
     public void setTimestart(String timestart) {
-        this.timestart = timestart;
+        this.timeStart = timestart;
     }
 
-    String timestart;
+
 }
