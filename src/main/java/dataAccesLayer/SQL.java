@@ -172,13 +172,24 @@ public class SQL {
         try {
             makeConnectionSQL();
 
-            PreparedStatement pp = myConn.prepareStatement("INSERT INTO sp3.ekgSessions (cpr, sessionID, timeStart, markers, comment) values(?,?,?,?,?);");
-            pp.setString(1, ekgSession.getCpr());  //CPR
-            pp.setString(2, ekgSession.getSession());
-            pp.setString(3, ekgSession.getTimestart());
-            pp.setString(4, "optional");
-            pp.setString(5, "optional");
-            pp.execute();
+            String validateSession ="SELECT * FROM sp3.ekgSessions WHERE sessionID = "+ekgSession.getSession();
+            PreparedStatement ppv = myConn.prepareStatement(validateSession);
+            ResultSet rs = ppv.executeQuery();
+
+            if(!rs.next()) {
+
+                PreparedStatement pp = myConn.prepareStatement("INSERT INTO sp3.ekgSessions (cpr, sessionID, timeStart, markers, comment) values(?,?,?,?,?);");
+                pp.setString(1, ekgSession.getCpr());  //CPR
+                pp.setString(2, ekgSession.getSession());
+                pp.setString(3, ekgSession.getTimestart());
+                pp.setString(4, "optional");
+                pp.setString(5, "optional");
+                pp.execute();
+            }
+            else{
+                System.out.println("Den findes allrede");
+            }
+
             removeConnectionSQL();
 
         } catch (SQLException e) {
@@ -213,6 +224,7 @@ public class SQL {
 
         try {
             makeConnectionSQL();
+
 
                 for (int i = 0; i < ekgData.getData().size() - 1; i ++) {
                     String write_to_measurement = "INSERT INTO sp3."+"session"+ekgSession.getSession()+" (value) values(?);";
@@ -286,11 +298,10 @@ public class SQL {
         PreparedStatement pp = SQL.getSqlOBJ().myConn.prepareStatement("SELECT * FROM session"+sessionID+";");
         EkgData ekgData = new EkgData();
         try {
-            pp.setInt(1, sessionID);
             ResultSet rs = pp.executeQuery();
 
             while (rs.next()) {
-                ekgData.addEkgData(rs.getDouble(1));
+                ekgData.addEkgData(rs.getDouble(2));
             }
             return ekgData;
         } catch (Exception e) {
