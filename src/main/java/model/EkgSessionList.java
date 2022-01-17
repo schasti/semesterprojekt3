@@ -2,6 +2,7 @@ package model;
 
 import javax.xml.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @XmlRootElement(name="ekgSessionList")
@@ -20,7 +21,7 @@ public class EkgSessionList {
 
     @XmlElement(name="ekgSession")
 
-    private List<EkgSession> ekgSessionList;
+    private List<EkgSession> ekgSessionList = new ArrayList<>();
 
     public void addEkgSession(EkgSession ekgSession) {
         ekgSessionList.add(ekgSession);
