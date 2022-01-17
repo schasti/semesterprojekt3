@@ -214,14 +214,10 @@ public class SQL {
         try {
             makeConnectionSQL();
 
-                for (int i = 0; i < ekgData.getData().size() - 1; i +=5) {
-                    String write_to_measurement = "INSERT INTO sp3.cpr"+ekgSession.getCpr()+"session"+ekgSession.getSession()+" (value) values(?)+(?)+(?)+(?)+(?);";
+                for (int i = 0; i < ekgData.getData().size() - 1; i ++) {
+                    String write_to_measurement = "INSERT INTO sp3."+"session"+ekgSession.getSession()+" (value) values(?);";
                     PreparedStatement PP = myConn.prepareStatement(write_to_measurement);
                     PP.setString(1, String.valueOf(ekgData.getData().get(i)));
-                    PP.setString(1, String.valueOf(ekgData.getData().get(i+1)));
-                    PP.setString(1, String.valueOf(ekgData.getData().get(i+2)));
-                    PP.setString(1, String.valueOf(ekgData.getData().get(i+3)));
-                    PP.setString(1, String.valueOf(ekgData.getData().get(i+4)));
                     PP.execute();
                 }
                 System.out.println("Done SQL");

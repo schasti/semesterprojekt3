@@ -10,13 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b95ac83-e0d2-4b4a-9315-781139f05e98" name="Changes" comment="indhente ekgsessionlist done ish">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataAccesLayer/SQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccesLayer/SQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/dataAccesLayer/SQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/dataAccesLayer/SQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/model/EkgSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/model/EkgSession.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dataAccesLayer/SQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataAccesLayer/SQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/EkgSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/EkgSession.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +159,7 @@
       <option name="presentableId" value="Default" />
       <updated>1642373278889</updated>
       <workItem from="1642373280114" duration="861000" />
-      <workItem from="1642405232052" duration="8404000" />
+      <workItem from="1642405232052" duration="8741000" />
     </task>
     <task id="LOCAL-00001" summary="sql injection done, tid til at hente">
       <created>1642373522447</created>
@@ -199,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642428056340</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="indhente ekgsessionlist done ish">
+      <created>1642429210010</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642429210010</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,5 +225,15 @@
     <MESSAGE value="sql injection done, tid til at hente" />
     <MESSAGE value="indhente ekgsessionlist done ish" />
     <option name="LAST_COMMIT_MESSAGE" value="indhente ekgsessionlist done ish" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
