@@ -44,7 +44,7 @@ public class EkgService {
 
     @Path("measurements")
     @GET
-    public void getEkgData(){
-
+    public EkgData getEkgData(@QueryParam("sessionID") String sessionID){
+        return EkgController.getEkgControllerObj().sessionSearchData(sessionID);
     }
 }

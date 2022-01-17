@@ -58,4 +58,18 @@ public class EkgController {
         }
     }
 
+    public EkgData sessionSearchData(String sessionID){
+        if(sessionID == null){
+            return null;
+        }
+        else{
+            try {
+                return SQL.getSqlOBJ().getEkgData(Integer.valueOf(sessionID));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
 }

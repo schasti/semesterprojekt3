@@ -193,7 +193,7 @@ public class SQL {
 
             PreparedStatement pp = myConn.prepareStatement(
 
-                    "CREATE TABLE sp3."+"session"+ekgSession.getSession()+" (measurement INT NOT NULL AUTO_INCREMENT,"+"value VARCHAR(45) NULL,"+" PRIMARY KEY (measurement))"
+                    "CREATE TABLE sp3."+"session"+ekgSession.getSession()+" (measurement INT NOT NULL AUTO_INCREMENT,"+"value DOUBLE NOT NULL,"+" PRIMARY KEY (measurement))"
             );
             pp.execute();
             removeConnectionSQL();
@@ -279,6 +279,24 @@ public class SQL {
         SQL.getSqlOBJ().removeConnectionSQL();
 
         return ekgSessionList;
+    }
+
+    public EkgData getEkgData(Integer sessionID) throws SQLException {
+        SQL.getSqlOBJ().makeConnectionSQL();
+        PreparedStatement pp = SQL.getSqlOBJ().myConn.prepareStatement("SELECT * FROM session"+sessionID+";");
+        EkgData ekgData = new EkgData();
+        try {
+            pp.setInt(1, sessionID);
+            ResultSet rs = pp.executeQuery();
+
+            while (rs.next()) {
+                ekgData.addEkgData(rs.getDouble(1));
+            }
+            return ekgData;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

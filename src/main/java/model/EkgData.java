@@ -8,15 +8,17 @@ import java.util.List;
 public class EkgData {
 
 
-    private List<Float> data;
+    private List<Double> data = new ArrayList<>();
 
 
 
-    public List<Float> getData() {return data;}
+    public List<Double> getData() {return data;}
 
-    public void setData(List<Float> data) {this.data = data;}
+    public void setData(List<Double> data) {this.data = data;}
 
-
+    public void addEkgData(Double data) {
+        this.data.add(data);
+    }
 /*
     private String cpr;
     private int sessionID;

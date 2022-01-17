@@ -40,6 +40,12 @@ public class AuthFilter implements ContainerRequestFilter {
                 throw new WebApplicationException(auth + "psst hvad er kodeordet?", 401);
             }
         }
+        if ("measurements".equals(containerRequestContext.getUriInfo().getPath()) ){
+            String auth = containerRequestContext.getHeaderString("Authorization");
+            if (auth == null || !auth.equals("Bearer hemmeliglogin")){
+                throw new WebApplicationException(auth + "psst hvad er kodeordet?", 401);
+            }
+        }
 
 
 
