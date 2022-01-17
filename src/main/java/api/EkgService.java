@@ -23,7 +23,7 @@ public class EkgService {
     @POST
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
-    public EkgData ekgpython(EkgData data, @Context HttpHeaders httpHeaders){
+    public EkgData ekgpython(EkgData data, @Context HttpHeaders httpHeaders) {
 
         EkgController.getEkgControllerObj().insertPythonData(
                 EkgController.getEkgControllerObj().insertHttpHeaders(
@@ -37,23 +37,14 @@ public class EkgService {
     }
 
 
-
-   /* public EkgData ekgpython(@QueryParam("identifier") String cpr,@QueryParam("session") String session, String data){
-
-
-        ekgdata.setCpr(cpr);
-        ekgdata.setSession(Integer.parseInt(session));
-
-        ekgdata.setDatanotlist(data);
-        return ekgdata ;
-    }*/
-
-
     @GET
-        public EkgSessionList getSession(@QueryParam("cpr") String cpr) throws SQLException, OurException {
-            return EkgController.getEkgControllerObj().cprSearchEkg(cpr);
-        }
+    public EkgSessionList getSession(@QueryParam("cpr") String cpr) throws SQLException, OurException {
+        return EkgController.getEkgControllerObj().cprSearchEkg(cpr);
+    }
 
+    @Path("measurements")
+    @GET
+    public void getEkgData(){
 
-
+    }
 }
