@@ -1,10 +1,7 @@
 package dataAccesLayer;
 
 import exceptions.OurException;
-import model.Aftale;
-import model.AftaleListe;
-import model.EkgData;
-import model.EkgSession;
+import model.*;
 
 import java.sql.*;
 
@@ -227,6 +224,55 @@ public class SQL {
         catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public EkgSessionList getEkgSessionList() throws SQLException {
+        SQL.getSqlOBJ().makeConnectionSQL();
+        EkgSessionList ekgSessionList = new EkgSessionList();
+        String query = "SELECT * FROM sp3.ekgSessions";
+        try {
+            ResultSet rs = SQL.getSqlOBJ().myStatement.executeQuery(query);
+
+            while (rs.next()) {
+                EkgSession ekgSession = new EkgSession();
+                ekgSession.setCpr(rs.getString(1));
+                ekgSession.setSession(rs.getString(2));
+                ekgSession.setTimestart(rs.getString(3));
+                System.out.println(ekgSession);
+                ekgSessionList.addEkgSession(ekgSession);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        SQL.getSqlOBJ().removeConnectionSQL();
+
+        return ekgSessionList;
+    }
+
+    public EkgSessionList getEkgSessionListCpr(String cpr) throws SQLException {
+        SQL.getSqlOBJ().makeConnectionSQL();
+        PreparedStatement pp = myConn.prepareStatement("SELECT * FROM sp3.ekgSessions WHERE cpr = ?;");
+        EkgSessionList ekgSessionList = new EkgSessionList();
+        try {
+            pp.setString(1, cpr);
+            ResultSet rs = pp.executeQuery();
+            while (rs.next()) {
+                EkgSession ekgSession = new EkgSession();
+                ekgSession.setCpr(rs.getString(1));
+                ekgSession.setSession(rs.getString(2));
+                ekgSession.setTimestart(rs.getString(3));
+
+                ekgSessionList.addEkgSession(ekgSession);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        SQL.getSqlOBJ().removeConnectionSQL();
+
+        return ekgSessionList;
     }
 
 }

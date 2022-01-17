@@ -1,18 +1,20 @@
 package api;
 
 import controller.EkgController;
+import exceptions.OurException;
 import model.EkgData;
+import model.EkgSessionList;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.HttpHeaders;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
+import java.sql.SQLException;
 
 @Path("ekgSessions")
+@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+@Consumes({MediaType.APPLICATION_XML})
 
 public class EkgService {
 
@@ -47,10 +49,11 @@ public class EkgService {
 
 
     @GET
-    @Consumes({MediaType.APPLICATION_JSON})
-    public void ekg(){
+        public EkgSessionList getSession(@QueryParam("cpr") String cpr) throws SQLException, OurException {
 
-    }
+            return EkgController.getEkgControllerObj().cprSearchEkg(cpr);
+        }
+
 
 
 }
