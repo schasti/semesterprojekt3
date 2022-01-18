@@ -103,3 +103,10 @@ h2 {
     padding: 10%;
     height: 10px;
 }
+
+.Sessions {
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width:500px;
+    min-height: 1000px;
+}

@@ -172,7 +172,7 @@ public class SQL {
         try {
             makeConnectionSQL();
 
-            String validateSession ="SELECT * FROM sp3.ekgSessions WHERE sessionID = "+ekgSession.getSession();
+            String validateSession ="SELECT * FROM sp3.ekgSessions WHERE sessionID = "+ekgSession.getSessionID();
             PreparedStatement ppv = myConn.prepareStatement(validateSession);
             ResultSet rs = ppv.executeQuery();
 
@@ -180,7 +180,7 @@ public class SQL {
 
                 PreparedStatement pp = myConn.prepareStatement("INSERT INTO sp3.ekgSessions (cpr, sessionID, timeStart, markers, comment) values(?,?,?,?,?);");
                 pp.setString(1, ekgSession.getCpr());  //CPR
-                pp.setString(2, ekgSession.getSession());
+                pp.setString(2, ekgSession.getSessionID());
                 pp.setString(3, ekgSession.getTimestart());
                 pp.setString(4, "optional");
                 pp.setString(5, "optional");
@@ -204,7 +204,7 @@ public class SQL {
 
             PreparedStatement pp = myConn.prepareStatement(
 
-                    "CREATE TABLE sp3."+"session"+ekgSession.getSession()+" (measurement INT NOT NULL AUTO_INCREMENT,"+"value DOUBLE NOT NULL,"+" PRIMARY KEY (measurement))"
+                    "CREATE TABLE sp3."+"session"+ekgSession.getSessionID()+" (measurement INT NOT NULL AUTO_INCREMENT,"+"value DOUBLE NOT NULL,"+" PRIMARY KEY (measurement))"
             );
             pp.execute();
             removeConnectionSQL();
@@ -227,7 +227,7 @@ public class SQL {
 
 
                 for (int i = 0; i < ekgData.getData().size() - 1; i ++) {
-                    String write_to_measurement = "INSERT INTO sp3."+"session"+ekgSession.getSession()+" (value) values(?);";
+                    String write_to_measurement = "INSERT INTO sp3."+"session"+ekgSession.getSessionID()+" (value) values(?);";
                     PreparedStatement PP = myConn.prepareStatement(write_to_measurement);
                     PP.setString(1, String.valueOf(ekgData.getData().get(i)));
                     PP.execute();
@@ -251,7 +251,7 @@ public class SQL {
             while (rs.next()) {
                 EkgSession ekgSession = new EkgSession();
                 ekgSession.setCpr(rs.getString(1));
-                ekgSession.setSession(rs.getString(2));
+                ekgSession.setSessionID(rs.getString(2));
                 ekgSession.setTimestart(rs.getString(3));
                 ekgSession.setMarkers(rs.getString(4));
                 ekgSession.setComment(rs.getString(5));
@@ -277,7 +277,7 @@ public class SQL {
             while (rs.next()) {
                 EkgSession ekgSession = new EkgSession();
                 ekgSession.setCpr(rs.getString(1));
-                ekgSession.setSession(rs.getString(2));
+                ekgSession.setSessionID(rs.getString(2));
                 ekgSession.setTimestart(rs.getString(3));
                 ekgSession.setMarkers(rs.getString(4));
                 ekgSession.setComment(rs.getString(5));

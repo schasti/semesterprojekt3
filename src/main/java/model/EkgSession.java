@@ -29,11 +29,11 @@ public class EkgSession {
     public String getComment() {return comment;}
     public void setComment(String comment) {this.comment = comment;}
 
-    public String getSession() {
+    public String getSessionID() {
         return sessionID;
     }
-    public void setSession(String session) {
-        this.sessionID = session;
+    public void setSessionID(String sessionID) {
+        this.sessionID = sessionID;
     }
 
     public String getCpr() {

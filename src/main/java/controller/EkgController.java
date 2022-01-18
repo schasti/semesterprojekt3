@@ -30,10 +30,10 @@ public class EkgController {
         }
     }
 
-    public EkgSession insertHttpHeaders(String cpr, String session, String timestart){
+    public EkgSession insertHttpHeaders(String cpr, String sessionID, String timestart){
         EkgSession ekgSession = new EkgSession();
         ekgSession.setCpr(cpr);
-        ekgSession.setSession(session);
+        ekgSession.setSessionID(sessionID);
         ekgSession.setTimestart(timestart);
         return ekgSession;
     }

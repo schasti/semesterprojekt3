@@ -605,14 +605,52 @@ function plot(array) {
 
 
     function fetchSession() {
-        document.getElementById("sessionID").innerHTML = "";
-        let cpr = document.getElementById("PCR.nr").value;
-        fetch("/data/ekgSessions?" + new URLSearchParams({
-            cpr: CPR.nr
+        let cpr = document.getElementById("CPR").value;
+        fetch("/Semesterprojekt3_war/data/ekgSessions?" + new URLSearchParams({  //semesterprojektwar er kun for localhost
+            cpr: cpr
         }), {
             headers: {
-                "Authorization": localStorage.getItem("token")
+                "Authorization": "Bearer hemmeliglogin"
             }
-        }).then(resp => resp.json()).then(data => displaydata(data));
+        }).then(resp => resp.text()).then(data => {
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(data, "application/xml");
+            displaySession(xml)
 
+
+        })
     }
+
+
+        function displaySession(xml) {
+            var table="<tr><th>CPR</th><th>SessionID</th></tr>";
+            console.log()
+           const Sessions=  xml.getElementsByTagName("ekgSession")
+            for(i=0; i< Sessions.length; i++){
+                table += "<tr><td>" +
+                    Sessions[i].getElementsByTagName("cpr")[0].innerHTML +
+                    "</td><td>" +
+                    Sessions[i].getElementsByTagName("sessionID")[0].innerHTML +
+                    "</td></tr>";
+            }
+            document.getElementById("sessions").innerHTML=table;
+        }
+
+
+        function createSessionList(data){
+            let container = "";
+            for (let i = 0; i < data.aftaleListe.aftale.length; i++) {
+                let cpr = "CPR: " + data;
+                let klinikid = "KlinikID: " + data.aftaleListe.aftale[i].klinikID;
+                let id = "AftaleID: " + data.aftaleListe.aftale[i].ID;
+                let time = data.aftaleListe.aftale[i].timeStart + " ----- " + data.aftaleListe.aftale[i].timeEnd;
+                let note = data.aftaleListe.aftale[i].notat;
+
+                let tider = '<span class="tider">' + time + '</span><br>'
+                let notat = '<span class="note">' + note + '</span><hr>';
+
+                container += navne + tider + notat;
+                console.log(container);
+            }
+            document.getElementById("tekstfelt").innerHTML = container;
+        }

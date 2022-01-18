@@ -1,5 +1,6 @@
 package api;
 
+import com.google.gson.Gson;
 import controller.EkgController;
 import exceptions.OurException;
 import model.EkgData;
@@ -13,7 +14,7 @@ import javax.ws.rs.core.HttpHeaders;
 
 import java.sql.SQLException;
 
-@Path("ekgSession")
+@Path("ekgSessions")
 @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 @Consumes({MediaType.APPLICATION_XML})
 
@@ -47,4 +48,18 @@ public class EkgService {
     public EkgData getEkgData(@QueryParam("sessionID") String sessionID){
         return EkgController.getEkgControllerObj().sessionSearchData(sessionID);
     }
+
+
+    @Path("ekgSessionsJson")
+    @GET
+    public String getSessionJson(@QueryParam("cpr") String cpr) throws SQLException {
+
+        try {
+            return new Gson().toJson(EkgController.getEkgControllerObj().cprSearchEkg(cpr));
+        } catch (OurException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
+
