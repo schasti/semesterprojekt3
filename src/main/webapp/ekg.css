@@ -76,6 +76,7 @@ body {
 
 /* Box til ekg */
 .container1{
+    border-color: blue;
     position: absolute;
     top: 100px;
     left: 5%;
@@ -88,6 +89,7 @@ body {
 
 /* Box til CPR og advarseler */
 .container2{
+    border-color: blue;
     position: absolute;
     top: 100px;
     right: 5%;
@@ -97,6 +99,70 @@ body {
     align-items: center;
     background-color: rgb(192, 192, 192);
 }
+.fetch-knapper{
+    border: 2px solid rgb(11, 71, 144);
+    background-color: rgb(11, 71, 144);
+    color: white;
+    height: 28px;
+    font-family: "Times New Roman", sans-serif;
+}
+
+.fetch-knapper:hover {
+    background-color: dodgerblue;
+}
+
+.fetch-knapper:active {
+    background-color: dodgerblue;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.egk-knapper{
+    border: 2px solid rgb(11, 71, 144);
+    background-color: rgb(11, 71, 144);
+    color: white;
+    height: 28px;
+    font-family: "Times New Roman", sans-serif;
+}
+
+.egk-knapper:hover {
+    background-color: dodgerblue;
+}
+
+.egk-knapper:active {
+    background-color: dodgerblue;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.print{
+    background-color: #3062b8; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.sabmit1{
+    border: 2px solid rgb(11, 71, 144);
+    background-color: rgb(11, 71, 144);
+    color: white;
+    height: 28px;
+    font-family: "Times New Roman", sans-serif;
+}
+
+.sabmit1:hover {
+    background-color: dodgerblue;
+}
+
+.sabmit1:active {
+    background-color: dodgerblue;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
 h2 {
     margin: 1px;
     width: 500px;
@@ -108,4 +174,24 @@ h2 {
     margin: 25px 0;
     font-size: 0.9em;
 
+}
+.Sessions , td, th {
+    border-bottom: 1px solid #ddd;
+}
+.Sessions
+{
+    background-color: rgb(192, 192, 192);
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    text-align: center;
+}
+
+input[type=text] {
+    background: url("IMG/white-abstract.jpg");
+}
+.result{
+    background: url("IMG/white-abstract.jpg");
+    position: center;
 }

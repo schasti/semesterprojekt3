@@ -9,7 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b95ac83-e0d2-4b4a-9315-781139f05e98" name="Changes" comment="alt backend er done //" />
+    <list default="true" id="3b95ac83-e0d2-4b4a-9315-781139f05e98" name="Changes" comment="alt backend er done //">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/egkSave.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/meddelelse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ekg.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ekg.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ekg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ekg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ekgSide.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ekgSide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekg.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekg.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekg.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekgSide.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekgSide.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -50,6 +64,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -63,13 +78,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,6 +190,7 @@
       <workItem from="1642405232052" duration="15277000" />
       <workItem from="1642455368369" duration="19214000" />
       <workItem from="1642500082746" duration="3115000" />
+      <workItem from="1642521674472" duration="19664000" />
     </task>
     <task id="LOCAL-00001" summary="sql injection done, tid til at hente">
       <created>1642373522447</created>
