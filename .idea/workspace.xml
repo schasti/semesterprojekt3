@@ -9,16 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b95ac83-e0d2-4b4a-9315-781139f05e98" name="Changes" comment="session kan hentes og vises på siden">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ekg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ekg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ekgSide.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ekgSide.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekg.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekgSide.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekgSide.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataAccesLayer/SQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataAccesLayer/SQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/EkgSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/EkgSession.class" afterDir="false" />
-    </list>
+    <list default="true" id="3b95ac83-e0d2-4b4a-9315-781139f05e98" name="Changes" comment="alt backend er done //" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -269,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642514241804</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="alt backend er done //">
+      <created>1642521355029</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1642521355029</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +295,8 @@
     <MESSAGE value="ekgData endpoint, mangler xml formattering" />
     <MESSAGE value="ekgData endpoint, done xml formattering" />
     <MESSAGE value="session kan hentes og vises på siden" />
-    <option name="LAST_COMMIT_MESSAGE" value="session kan hentes og vises på siden" />
+    <MESSAGE value="alt backend er done //" />
+    <option name="LAST_COMMIT_MESSAGE" value="alt backend er done //" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
