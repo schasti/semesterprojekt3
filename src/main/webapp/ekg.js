@@ -10,7 +10,8 @@ if (!tok) {
 /* log ud knappen */
 function logud() {
     sessionStorage.setItem("username", "");
-    window.location.replace("LoginSide.html")}
+    window.location.replace("LoginSide.html")
+}
 
 function showString(data2) {
     let s = "" + data2
@@ -19,638 +20,98 @@ function showString(data2) {
 }
 
 
-function ekgMeasFetch(cpr) {
-    fetch("data/ekgSession/measurements?cpr?" + new URLSearchParams({
-        CPR: cpr,
-
+function fetchSession() {
+    let cpr = document.getElementById("CPR").value;
+    fetch("/Semesterprojekt3_war/data/ekgSessions?" + new URLSearchParams({  //semesterprojektwar er kun for localhost
+        cpr: cpr
     }), {
         headers: {
-            "Authorization": localStorage.getItem("token")
+            "Authorization": "Bearer hemmeliglogin"
         }
-    }).then(resp => resp.json()).then(data => plot(data.json));
-}
-
-function plot(array) {
-    let label = [0];
-
-    for (let i = 1; i < array.length; i++) {
-        label.push(i)
-    }
-
-    ekgplot.data.labels = label;
-    ekgplot.data.datasets[0].data = array; // Would update the first dataset's value of 'March' to be 50
-    ekgplot.update(); //
-}
+    }).then(resp => resp.text()).then(data => {
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(data, "application/xml");
+        displaySession(xml)
 
 
-
-
-//Funktionen, der indhenter EGK fra database
-    async function getEKG() {
-        const response = await fetch("data/ekgSession/measurements?")
-        if (response.status != 200) {
-            alert("noget gik galt!");
-        }
-        console.log(response.status)
-
-
-        let ditCPR = document.getElementById("PCR.nr").value;
-        let SessionID = document.getElementById("sessionID").value;
-        let TidStart= document.getElementById("start").value;
-        let TidSlut = document.getElementById("slut").value;
-        let meddelelse = document.getElementById("meddelelse").value;
-
-        if (CPR.length == 10 && SessionID !=null && StartTid != null && Sluttid != null) {
-
-            document.getElementById("cpr" + i).innerHTML = ditCPR;
-            document.getElementById("sessionID" + i).innerHTML = SessionID;
-            document.getElementById("start" + i).innerHTML = TidStart;
-            document.getElementById("slut" + i).innerHTML = TidSlut;
-            document.getElementById("meddelelse" + i).innerHTML = meddelelse;
-
-            i++;
-        } else {
-            alert("Indtast venligst alle korrekte oplsyninger. ")
-        }
-        //await hentEKG()
-    }
-/*
-    async function hentEKG() {
-        let result = await fetch("data/ekgSession/measurements?");
-        console.log(result.status)
-        if (result.status != 200) {
-            alert("noget gik galt!");
-        }
-        let json = await result.json();
-        console.log(json)
-        updateECG(json)
-
-    }
-
- */
-/*
-    function updateECG(json) {
-        let listelements = ""
-        json.forEach(function (element) {
-            listelements += ("<li>" + element.name + "</li>")
-        })
-
-        let ecgArray = document.getElementById("ekgplot");
-        ecgArray.innerHTML = listelements
-    }
-
- */  //Fetch som ikke virker
-
-
-//EKG plot
-    let data = {
-        labels: labelx,
-        datasets:
-            [
-                {
-                    label: "ekg",
-                    backgroundColor: 'rgb(239,228,230)',
-                    borderColor: 'rgb(255, 0, 0)',
-                    color: 'rgb(255,0,0)',
-                    data: [0.377982375,
-                        0.39661525000000003,
-                        0.41731162499999996,
-                        0.433743875,
-                        0.43849812499999996,
-                        0.43667487499999996,
-                        0.4300469999999999,
-                        0.42575487500000003,
-                        0.42849475,
-                        0.4439325,
-                        0.4681273749999999,
-                        0.4992105,
-                        0.5295215000000001,
-                        0.5548313749999999,
-                        0.5692442500000001,
-                        0.57423125,
-                        0.5685432500000001,
-                        0.55906075,
-                        0.5525175,
-                        0.555031875,
-                        0.5622495,
-                        0.576254625,
-                        0.5914130000000001,
-                        0.6060233750000001,
-                        0.61316125,
-                        0.610672375,
-                        0.59470275,
-                        0.5742963750000001,
-                        0.551804875,
-                        0.531980875,
-                        0.51745525,
-                        0.508976625,
-                        0.5011693749999998,
-                        0.490935125,
-                        0.47177474999999996,
-                        0.44406274999999984,
-                        0.40928875,
-                        0.37347699999999995,
-                        0.33646299999999996,
-                        0.30411137499999996,
-                        0.2750475,
-                        0.254246625,
-                        0.23509087499999998,
-                        0.215523875,
-                        0.185720625,
-                        0.14743099999999998,
-                        0.10395912499999999,
-                        0.065684125,
-                        0.03582625,
-                        0.01559425,
-                        0.00020775000000000047,
-                        -0.0114165,
-                        -0.022023249999999998,
-                        -0.035135125,
-                        -0.05879962500000001,
-                        -0.09377299999999998,
-                        -0.13604562499999998,
-                        -0.17331074999999999,
-                        -0.20300137499999998,
-                        -0.22177975,
-                        -0.234769625,
-                        -0.2425675,
-                        -0.2493525,
-                        -0.258408,
-                        -0.27979675000000004,
-                        -0.31184799999999996,
-                        -0.35068949999999993,
-                        -0.38902625,
-                        -0.42053249999999986,
-                        -0.43939700000000004,
-                        -0.4481081249999999,
-                        -0.4470755,
-                        -0.44385062500000005,
-                        -0.4423731249999999,
-                        -0.44776587500000004,
-                        -0.458557375,
-                        -0.47652987499999994,
-                        -0.4934315,
-                        -0.508305,
-                        -0.510838375,
-                        -0.5033405,
-                        -0.49073775,
-                        -0.48145362499999994,
-                        -0.473011,
-                        -0.473734625,
-                        -0.4811226249999999,
-                        -0.49478387499999993,
-                        -0.5113037500000001,
-                        -0.5292034999999999,
-                        -0.5360411249999999,
-                        -0.5338375,
-                        -0.5248136250000001,
-                        -0.5163042499999999,
-                        -0.509149875,
-                        -0.509102125,
-                        -0.512381,
-                        -0.517682125,
-                        -0.5218928749999999,
-                        -0.524861875,
-                        -0.5210907499999999,
-                        -0.510666375,
-                        -0.49763437499999996,
-                        -0.48996837499999996,
-                        -0.4930144999999999,
-                        -0.5095997499999999,
-                        -0.5310152499999999,
-                        -0.55132675,
-                        -0.566942,
-                        -0.5785054999999999,
-                        -0.577307,
-                        -0.563124,
-                        -0.53773525,
-                        -0.511181125,
-                        -0.48852562499999996,
-                        -0.47973625,
-                        -0.48168024999999987,
-                        -0.491260875,
-                        -0.503664125,
-                        -0.516300375,
-                        -0.5201260000000001,
-                        -0.514547375,
-                        -0.50224275,
-                        -0.48739524999999995,
-                        -0.47713575,
-                        -0.47616274999999997,
-                        -0.48305962500000005,
-                        -0.49238324999999994,
-                        -0.50230925,
-                        -0.509001,
-                        -0.510043375,
-                        -0.5065195,
-                        -0.5006276249999999,
-                        -0.49436125000000003,
-                        -0.491721875,
-                        -0.49982887499999995,
-                        -0.51584825,
-                        -0.533932375,
-                        -0.5500863750000001,
-                        -0.559730375,
-                        -0.5577768750000001,
-                        -0.54287725,
-                        -0.519719125,
-                        -0.49298862499999996,
-                        -0.469738375,
-                        -0.451781375,
-                        -0.442028625,
-                        -0.44030512499999996,
-                        -0.44463074999999996,
-                        -0.4478188749999999,
-                        -0.44499174999999996,
-                        -0.435658375,
-                        -0.42531862499999995,
-                        -0.41482474999999996,
-                        -0.4076755,
-                        -0.405444125,
-                        -0.408089,
-                        -0.41251362500000005,
-                        -0.41559137500000004,
-                        -0.41162862499999997,
-                        -0.40245662499999996,
-                        -0.39177575,
-                        -0.38297200000000003,
-                        -0.380278125,
-                        -0.38494762499999996,
-                        -0.39589737499999994,
-                        -0.41082599999999997,
-                        -0.42289124999999994,
-                        -0.42853175,
-                        -0.42602874999999996,
-                        -0.41331762499999997,
-                        -0.395149125,
-                        -0.37744124999999995,
-                        -0.362479875,
-                        -0.35716637500000004,
-                        -0.362982875,
-                        -0.37124624999999994,
-                        -0.3770345,
-                        -0.37820800000000004,
-                        -0.3699985,
-                        -0.354384125,
-                        -0.332818375,
-                        -0.30885937500000005,
-                        -0.28869312499999994,
-                        -0.28091537499999997,
-                        -0.2807275,
-                        -0.285075625,
-                        -0.288227375,
-                        -0.288606,
-                        -0.281238,
-                        -0.2680825,
-                        -0.250433375,
-                        -0.23427699999999996,
-                        -0.223897375,
-                        -0.22300737499999998,
-                        -0.23089125000000002,
-                        -0.24363949999999998,
-                        -0.259135875,
-                        -0.27343625,
-                        -0.27877625000000006,
-                        -0.27198812499999997,
-                        -0.25721925,
-                        -0.24101425,
-                        -0.227302625,
-                        -0.222176375,
-                        -0.22412849999999998,
-                        -0.229609375,
-                        -0.23549487500000002,
-                        -0.242576625,
-                        -0.24328975,
-                        -0.23648624999999998,
-                        -0.22453849999999997,
-                        -0.211830625,
-                        -0.20264899999999997,
-                        -0.207238875,
-                        -0.220554375,
-                        -0.23589824999999998,
-                        -0.24807400000000002,
-                        -0.25787475,
-                        -0.25918825,
-                        -0.25403699999999996,
-                        -0.24477400000000002,
-                        -0.23597462499999997,
-                        -0.23319862500000002,
-                        -0.24389912500000002,
-                        -0.2625355,
-                        -0.27960274999999996,
-                        -0.29104849999999993,
-                        -0.297948875,
-                        -0.29452849999999997,
-                        -0.2828575,
-                        -0.2638965,
-                        -0.24465462499999996,
-                        -0.23029225,
-                        -0.230232125,
-                        -0.238694,
-                        -0.25281524999999994,
-                        -0.265997,
-                        -0.272824875,
-                        -0.26854525,
-                        -0.254379125,
-                        -0.23087487499999998,
-                        -0.20679762499999998,
-                        -0.18839987500000002,
-                        -0.17871375,
-                        -0.17978337499999997,
-                        -0.19036725000000004,
-                        -0.203810375,
-                        -0.21655349999999998,
-                        -0.22258462500000004,
-                        -0.21548050000000002,
-                        -0.201648,
-                        -0.1888215,
-                        -0.1831825,
-                        -0.187964875,
-                        -0.20439112499999998,
-                        -0.22475862500000002,
-                        -0.242016,
-                        -0.251886875,
-                        -0.25112175,
-                        -0.240905375,
-                        -0.224130125,
-                        -0.20524375,
-                        -0.189716875,
-                        -0.18400925000000004,
-                        -0.189089625,
-                        -0.200067625,
-                        -0.20951525000000001,
-                        -0.21213225000000002,
-                        -0.20961299999999997,
-                        -0.198579125,
-                        -0.17966849999999993,
-                        -0.15931387499999997,
-                        -0.1440925,
-                        -0.13547499999999998,
-                        -0.127062375,
-                        -0.10385800000000002,
-                        -0.05769900000000001,
-                        0.011271874999999992,
-                        0.10379962499999996,
-                        0.216357,
-                        0.343424,
-                        0.47814975,
-                        0.6062384999999999,
-                        0.7162436250000002,
-                        0.798260875,
-                        0.8484858750000001,
-                        0.8652876250000001,
-                        0.855739,
-                        0.8192650000000001,
-                        0.7580423749999999,
-                        0.669932,
-                        0.5591290000000001,
-                        0.42767900000000003,
-                        0.28225275,
-                        0.130046,
-                        -0.012770374999999976,
-                        -0.13238424999999995,
-                        -0.21745737499999993,
-                        -0.26644362499999996,
-                        -0.28484737499999996,
-                        -0.28331775,
-                        -0.26823637499999997,
-                        -0.251991875,
-                        -0.23983025,
-                        -0.23409587499999998,
-                        -0.232546875,
-                        -0.22997112499999997,
-                        -0.21881825,
-                        -0.2047235,
-                        -0.18941374999999996,
-                        -0.177002625,
-                        -0.170373375,
-                        -0.171828125,
-                        -0.17772462499999997,
-                        -0.19096025000000003,
-                        -0.20503162499999997,
-                        -0.21610949999999998,
-                        -0.21730812499999996,
-                        -0.20719412499999998,
-                        -0.186796,
-                        -0.1630345,
-                        -0.140549,
-                        -0.12708275,
-                        -0.1244905,
-                        -0.128688,
-                        -0.137831625,
-                        -0.151326125,
-                        -0.16111175,
-                        -0.1603105,
-                        -0.149171125,
-                        -0.132759375,
-                        -0.12147912499999998,
-                        -0.123302,
-                        -0.13312349999999998,
-                        -0.143907875,
-                        -0.15352174999999996,
-                        -0.15979825,
-                        -0.157272,
-                        -0.146325375,
-                        -0.126404625,
-                        -0.10477237499999999,
-                        -0.08918,
-                        -0.089142875,
-                        -0.099312875,
-                        -0.115660875,
-                        -0.13152375,
-                        -0.14327524999999997,
-                        -0.14547412499999998,
-                        -0.13959862499999998,
-                        -0.12477899999999997,
-                        -0.10561512499999999,
-                        -0.08830449999999998,
-                        -0.08084749999999999,
-                        -0.082726625,
-                        -0.09172100000000001,
-                        -0.09906400000000001,
-                        -0.10522100000000001,
-                        -0.10294674999999999,
-                        -0.09365737499999999,
-                        -0.07757574999999998,
-                        -0.06122437499999999,
-                        -0.04059862499999999,
-                        -0.025557874999999997,
-                        -0.017397,
-                        -0.017639374999999995,
-                        -0.020191624999999998,
-                        -0.019446749999999992,
-                        -0.005160249999999998,
-                        0.018032375000000007,
-                        0.044424500000000006,
-                        0.06802362499999999,
-                        0.08940712499999998,
-                        0.104242,
-                        0.112072125,
-                        0.11147187499999998,
-                        0.10961687499999997,
-                        0.10973887499999999,
-                        0.11933300000000001,
-                        0.13533675,
-                        0.156234125,
-                        0.17792787500000004,
-                        0.199202875,
-                        0.21277524999999997,
-                        0.22015025,
-                        0.22512549999999998,
-                        0.23147800000000004,
-                        0.23902462500000002,
-                        0.253634625,
-                        0.276143,
-                        0.3054184999999999,
-                        0.3353451249999999,
-                        0.3577786249999999,
-                        0.36480675,
-                        0.36268174999999997,
-                        0.354759375,
-                        0.34418012499999995,
-                        0.33516425,
-                        0.3349755,
-                        0.34306400000000004,
-                        0.36096487499999996,
-                        0.385465125,
-                        0.409838625,
-                        0.423483125,
-                        0.425407625,
-                        0.41515337499999994,
-                        0.39581137499999997,
-                        0.37558987499999996,
-                        0.36180337500000004,
-                        0.354777125,
-                        0.352098,
-                        0.35057175,
-                        0.34497225000000004,
-                        0.33190825,
-                        0.3089485,
-                        0.2801065,
-                        0.252557625,
-                        0.2270905,
-                        0.20670150000000004,
-                        0.19428849999999998,
-                        0.189030375,
-                        0.18260987499999998,
-                        0.17209987499999996,
-                        0.15314162499999998,
-                        0.126136375,
-                        0.096651625,
-                        0.06772374999999999,
-                        0.042294874999999996,
-                        0.026048625,
-                        0.020474999999999997,
-                        0.0206155,
-                        0.02580175,
-                        0.026447375,
-                        0.019260125,
-                        0.006982875000000002,
-                        -0.008566374999999996,
-                        -0.028155500000000003,
-                        -0.04271475000000001,
-                        -0.05043275,
-                        -0.04843275,
-                        -0.038145875,
-                        -0.028548375,
-                        -0.027609125,
-                        -0.03247437499999999,
-                        -0.04122075000000001,
-                        -0.04890550000000001,
-                        -0.054254875,
-                        -0.056321874999999993,
-                        -0.05402525,
-                        -0.045054250000000004,
-                        -0.031880250000000006,
-                        -0.018565375000000002,
-                        -0.014980250000000004,
-                        -0.020209,
-                        -0.02697325,
-                        -0.03376112499999999,
-                        -0.039464875,
-                        -0.036442749999999996,
-                        -0.028226875000000005,
-                        -0.016577625000000002,
-                        -0.003835500000000004,
-                        0.0075120000000000004,
-                        0.0074046250000000015,
-                        -0.0005304999999999993,
-                        -0.016434624999999994,
-                        -0.034040875,
-                        -0.047396125,
-                        -0.046777875,],
-                    tension: 1,
-                    pointRadius: 0.5,
-                    pointHoverRadius: 0.5
-                }
-            ]
-    }
-
-// for-loop til x-akse
-    for (let i = 1; i < data.datasets[0].data.length; i++) {
-        labelx.push(i)
-    }
-    const config = {
-        type: 'line',
-        data: data,
-        options: {}
-    }
-    window.onload = (function () {
-
-        ekgplot = new Chart(
-            document.getElementById('ekgplot'),
-            config
-        );
     })
+}
 
 
-    function fetchSession() {
-        let cpr = document.getElementById("CPR").value;
-        fetch("/Semesterprojekt3_war/data/ekgSessions?" + new URLSearchParams({  //semesterprojektwar er kun for localhost
-            cpr: cpr
-        }), {
-            headers: {
-                "Authorization": "Bearer hemmeliglogin"
-            }
-        }).then(resp => resp.text()).then(data => {
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(data, "application/xml");
-            displaySession(xml)
-
-
-        })
+function displaySession(xml) {
+    var table = "<tr><th>CPR</th><th>SessionID</th></tr>";
+    console.log()
+    const Sessions = xml.getElementsByTagName("ekgSession")
+    for (i = 0; i < Sessions.length; i++) {
+        table += "<tr><td>" +
+            Sessions[i].getElementsByTagName("cpr")[0].innerHTML +
+            "</td><td>" +
+            Sessions[i].getElementsByTagName("sessionID")[0].innerHTML +
+            "</td></tr>";
     }
+    document.getElementById("sessions").innerHTML = table;
+}
 
 
-        function displaySession(xml) {
-            var table="<tr><th>CPR</th><th>SessionID</th></tr>";
-            console.log()
-           const Sessions=  xml.getElementsByTagName("ekgSession")
-            for(i=0; i< Sessions.length; i++){
-                table += "<tr><td>" +
-                    Sessions[i].getElementsByTagName("cpr")[0].innerHTML +
-                    "</td><td>" +
-                    Sessions[i].getElementsByTagName("sessionID")[0].innerHTML +
-                    "</td></tr>";
-            }
-            document.getElementById("sessions").innerHTML=table;
+function fetchEkgData() {
+    let sessionID = document.getElementById("sessionID").value;
+    fetch("/Semesterprojekt3_war/data/ekgSessions/measurements?" + new URLSearchParams({  //semesterprojektwar er kun for localhost
+        sessionID: sessionID
+    }), {
+        headers: {
+            "Authorization": "Bearer hemmeliglogin"
         }
+    }).then(resp => resp.text()).then(data => {
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(data, "application/xml");
+        plot(xml)
+    })
+}
 
 
-        function createSessionList(data){
-            let container = "";
-            for (let i = 0; i < data.aftaleListe.aftale.length; i++) {
-                let cpr = "CPR: " + data;
-                let klinikid = "KlinikID: " + data.aftaleListe.aftale[i].klinikID;
-                let id = "AftaleID: " + data.aftaleListe.aftale[i].ID;
-                let time = data.aftaleListe.aftale[i].timeStart + " ----- " + data.aftaleListe.aftale[i].timeEnd;
-                let note = data.aftaleListe.aftale[i].notat;
-
-                let tider = '<span class="tider">' + time + '</span><br>'
-                let notat = '<span class="note">' + note + '</span><hr>';
-
-                container += navne + tider + notat;
-                console.log(container);
-            }
-            document.getElementById("tekstfelt").innerHTML = container;
+let data = {
+    datasets:[
+        {
+            label:"ekg",
+            backroundColor: 'rgb(255,99,132)',
+            borderColor: 'rgb(255,99,132)',
+            data:[]
         }
+    ]
+}
+
+const config = {
+    type: 'line',
+    data:data,
+    options: {}
+}
+
+
+
+
+function plot(xml) {
+
+    const measurements = xml.getElementsByTagName("measurement")
+    for (i = 0; i < measurements.length; i++) {
+        data.datasets[0].data[i] = measurements[i].innerHTML
+        console.log(i + "    " + data.datasets[0].data[i])
+    }
+    data.labels = Array(data.datasets[0].data.length).fill("")
+
+    plotEkg(data.datasets[0].data)
+
+}
+
+
+function plotEkg(data) {
+
+    let canvas = new Chart(
+        document.getElementById("ekgplot"),
+        config
+    );
+    let context = canvas.getContext("2d");
+    for (i = 0; i < data.length; i++) {
+        context.lineTo(i, 300 - data[i] * 100)
+        context.stroke()
+    }
+}
