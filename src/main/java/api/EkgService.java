@@ -13,7 +13,7 @@ import javax.ws.rs.core.HttpHeaders;
 
 import java.sql.SQLException;
 
-@Path("ekgSessions")
+@Path("ekgSession")
 @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 @Consumes({MediaType.APPLICATION_XML})
 

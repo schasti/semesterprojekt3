@@ -10,16 +10,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b95ac83-e0d2-4b4a-9315-781139f05e98" name="Changes" comment="ekgData endpoint, mangler xml formattering">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/EkgData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/EkgData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/EkgService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/EkgService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ekg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ekg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ekgSide.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ekgSide.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/model/EkgData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/model/EkgData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/EkgData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/EkgData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/api/EkgService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/WEB-INF/classes/api/EkgService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekg.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekgSide.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekgSide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/EkgService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/EkgService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,6 +67,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
@@ -71,7 +88,7 @@
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.54" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.54" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Semesterprojekt3_war/" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Semesterprojekt3:war">
@@ -169,6 +186,8 @@
       <updated>1642373278889</updated>
       <workItem from="1642373280114" duration="861000" />
       <workItem from="1642405232052" duration="15277000" />
+      <workItem from="1642455368369" duration="19214000" />
+      <workItem from="1642500082746" duration="3115000" />
     </task>
     <task id="LOCAL-00001" summary="sql injection done, tid til at hente">
       <created>1642373522447</created>

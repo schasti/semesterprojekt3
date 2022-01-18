@@ -21,33 +21,35 @@
 <!--EKG box -->
 <div class="container1" data-title="EKG" data-intro="I denne boks kan du se dit EKG">
     <canvas id="ekgplot" height="350" width="500"></canvas>
+    <!--<input  onchange="updateChart(this)" on type="range" min="2000" max="10000" value="10000" class="slider">-->
 </div>
 
 <!--Advarselses box-->
 <div class="container2" ><h>Indhent historiske data </h>
     <div>
-        <input type="text" placeholder="indtast PCR.nr" name="PCR.nr" required data-intro="Her indtastes dit cpr.nr">
+        <input type="text" placeholder="indtast PCR.nr" id="cpr" name="PCR" required data-intro="Her indtastes dit cpr.nr">
         <p></p>
-        <input type="password" placeholder="sessionID" name="sessionID" required data-intro="Her indtastes din sessionID">
+        <input type="text" placeholder="indtast SessionID" id="sessionID" name="sessionID" required data-intro="Her indtastes din sessionID">
         <p>
 
-            <label for="start" data-intro="Her indtastes periden start dato">Dato fra:</label>
-            <input type="date" id="start" name="trip-start"
+            <label for="start" data-intro="Her indtastes periden start dato">Dato_fra</label>
+            <input type="date" id="start" name="TidStart"
                    value="2018-07-22"
                    min="2018-01-01" max="2023-12-31">
 
-            <label for="start" data-intro="Her indtastes periden slut dato">Dato til:</label>
-            <input type="date" id="slut" name="trip-start"
+            <label for="start" data-intro="Her indtastes periden slut dato">Dato_til</label>
+            <input type="date" id="slut" name="TidSlut"
                    value="2018-07-22"
                    min="2018-01-01" max="2023-12-31">
         </p>
-        <input class="Aftaler-knapper" type="button" value="  Hent Data  " onclick="getEkg()" data-intro="Ved at trykke på knappen indhentes lab oplysninger">
+        <input class="Aftaler-knapper" type="button" value="  Hent Data  " onclick="getEKG()" data-intro="Ved at trykke på knappen indhentes lab oplysninger">
 
     </div>
-    <h2 data-title="CPR" data-intro="Her kan du se dit CPR nummer">CPR:</h2>
+    <h2 data-title="CPR" name ="ditCPR "data-intro="Her kan du se dit CPR nummer">CPR:</h2>
     <h2 data-title="Meddelelser"> Meddelelser: </h2>
     <iframe
-            name="meddelelser" data-intro="I denne boks kan du se hvis din læge eller vores system har lavet en kommentar til patients EKG" style="height:175px;width:380px;">
+            name="meddelelser" id="meddelelser" data-intro="I denne boks kan du se hvis din læge eller vores system har lavet en kommentar til patients EKG" style="height:175px;width:380px;">
+
     </iframe>
 </div>
 <script src="intro.js"></script>
