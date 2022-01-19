@@ -10,11 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b95ac83-e0d2-4b4a-9315-781139f05e98" name="Changes" comment="alt backend er done //">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/710af770-6431-415c-b200-43e628715202.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/710af770-6431-415c-b200-43e628715202.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ekgSide.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ekgSide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EkgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/EkgController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekgSide.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekgSide.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +269,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642521355029</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="alt backend er done //">
+      <created>1642521616958</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1642521616958</updated>
+    </task>
+    <task id="LOCAL-00015" summary="alt backend er done //">
+      <created>1642521818270</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1642521818270</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

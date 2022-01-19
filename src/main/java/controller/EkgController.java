@@ -59,7 +59,7 @@ public class EkgController {
     }
 
     public EkgData sessionSearchData(String sessionID){
-        if(sessionID == null){
+        if(sessionID == ""){
             return null;
         }
         else{
