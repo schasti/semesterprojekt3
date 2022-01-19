@@ -1,4 +1,4 @@
-let i = 1;
+/*let i = 1;
 let range = []
 let labels1 = []
 let tok = localStorage.getItem("token");
@@ -6,7 +6,7 @@ if (!tok) {
     window.location.href = "LoginSide.html"
 }
 
-/* log ud knappen */
+// log ud knappen
 function logud() {
     sessionStorage.setItem("username", "");
     window.location.replace("LoginSide.html")
@@ -98,7 +98,7 @@ for (let i=1;i<data.datasets[0].data.length;i++){
 }
 
  */
-
+/*
 const config = {
     type: 'line',
     data:data,
@@ -125,6 +125,7 @@ function plot(xml) {
 
 
 
+
 function plotEkg(data) {
 
     let canvas = new Chart(
@@ -137,3 +138,5 @@ function plotEkg(data) {
         context.stroke()
     }
 }
+
+ */

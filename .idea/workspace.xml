@@ -9,11 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b95ac83-e0d2-4b4a-9315-781139f05e98" name="Changes" comment="alt backend er done //">
+    <list default="true" id="3b95ac83-e0d2-4b4a-9315-781139f05e98" name="Changes" comment="forskellige browser forskellige udseen?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/egkSave.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/egkSave.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ekg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ekg.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/ekgSide.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ekgSide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/meddelelse.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/meddelelse.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekg.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekg.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekgSide.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Semesterprojekt3-1.0-SNAPSHOT/ekgSide.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,8 +75,21 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.54" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.54" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="BROWSER_ID" value="e5120d43-2c3f-47ef-9f26-65e539e05186" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Semesterprojekt3:war">
@@ -174,7 +190,7 @@
       <workItem from="1642455368369" duration="19214000" />
       <workItem from="1642500082746" duration="3115000" />
       <workItem from="1642521674472" duration="19664000" />
-      <workItem from="1642580507188" duration="1104000" />
+      <workItem from="1642580507188" duration="9542000" />
     </task>
     <task id="LOCAL-00001" summary="sql injection done, tid til at hente">
       <created>1642373522447</created>
@@ -267,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642521355029</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="forskellige browser forskellige udseen?">
+      <created>1642581799845</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1642581799845</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +319,8 @@
     <MESSAGE value="ekgData endpoint, done xml formattering" />
     <MESSAGE value="session kan hentes og vises på siden" />
     <MESSAGE value="alt backend er done //" />
-    <option name="LAST_COMMIT_MESSAGE" value="alt backend er done //" />
+    <MESSAGE value="forskellige browser forskellige udseen?" />
+    <option name="LAST_COMMIT_MESSAGE" value="forskellige browser forskellige udseen?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -305,6 +329,12 @@
           <properties class="java.sql.SQLException" package="java.sql" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/main/webapp/egkSave.js</url>
+          <line>110</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -1,6 +1,4 @@
-let i = 1;
-let labelx = [0];
-let ekgplot;
+
 
 let tok = localStorage.getItem("token");
 if (!tok) {
@@ -42,7 +40,7 @@ function displaySession(xml) {
     var table = "<tr><th>CPR</th><th>SessionID</th></tr>";
     console.log()
     const Sessions = xml.getElementsByTagName("ekgSession")
-    for (i = 0; i < Sessions.length; i++) {
+    for (let i = 0; i < Sessions.length; i++) {
         table += "<tr><td>" +
             Sessions[i].getElementsByTagName("cpr")[0].innerHTML +
             "</td><td>" +
@@ -66,42 +64,47 @@ function fetchEkgData() {
         const xml = parser.parseFromString(data, "application/xml");
         plot(xml)
     })
+
 }
 
 
 let data = {
-    datasets:[
+
+    datasets: [
         {
-            label:"ekg",
+            label: "Electrocardiogram (ECG or EKG)",
             backroundColor: 'rgb(255,99,132)',
             borderColor: 'rgb(255,99,132)',
-            data:[]
+            data: [],
         }
     ]
 }
 
 const config = {
     type: 'line',
-    data:data,
+    data: data,
     options: {}
 }
-
-
 
 
 function plot(xml) {
 
     const measurements = xml.getElementsByTagName("measurement")
-    for (i = 0; i < measurements.length; i++) {
+    for (let i = 0; i < measurements.length; i++) {
         data.datasets[0].data[i] = measurements[i].innerHTML
         console.log(i + "    " + data.datasets[0].data[i])
     }
-    data.labels = Array(data.datasets[0].data.length).fill("")
+let samplerate = 2000
+let xl = []
+    for ( let i =0; i<data.datasets[0].data.length; i++){
+        xl.push(i/samplerate);
+    }
+    data.labels = xl
 
     plotEkg(data.datasets[0].data)
+    
 
 }
-
 
 function plotEkg(data) {
 
@@ -114,4 +117,5 @@ function plotEkg(data) {
         context.lineTo(i, 300 - data[i] * 100)
         context.stroke()
     }
+
 }
