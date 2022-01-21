@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jan 12 19:40:03 2022
+For at køre python filteret så skal man ligge filen
+ind i Person_1 EKG Måling
 
 @author: bruger
 """
